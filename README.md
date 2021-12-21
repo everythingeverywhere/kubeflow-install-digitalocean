@@ -35,5 +35,5 @@ For my purposes I installed all the tools because I wanted to see what a full in
 * kustomize (version 3.2.0) (download link)
     * https://stackoverflow.com/questions/66836979/how-to-install-a-specific-kustomize-version3.2.3
     * ⚠️ Kubeflow 1.4.0 is not compatible with the latest versions of of kustomize 4.x. This is due to changes in the order resources are sorted and printed. Please see kubernetes-sigs/kustomize#3794 and kubeflow/manifests#1797.
-* [kubectl]s(https://kubectl.docs.kubernetes.io/installation/kubectl/)
+* [kubectl](https://kubectl.docs.kubernetes.io/installation/kubectl/)
 

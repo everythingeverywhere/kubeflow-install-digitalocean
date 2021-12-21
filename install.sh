@@ -1,4 +1,7 @@
 
+
+
+
 # Clone manifests repo
 
 git clone https://github.com/kubeflow/manifests.git
