@@ -5,7 +5,9 @@
 ---
 > This repo is part of the [DigitalOcean Kubernetes Challenge](https://www.digitalocean.com/community/pages/kubernetes-challenge#anchor--success-criteria)
 
-I have been wanting to play with Kubeflow out of curiosity and for fun more than anything. Installing it locally sounds like it could torture my machine. Even if it ended up working doing any kind of machine learning could take up a lot out of my processors. Instead, taking advantage of DigitalOcean Kubernetes is a good choice when you can pay $10/month to get started with real Kubernetes. Since it's Kubernetes, once you pick a cluster it's easy to add or remove nodes pools to manage performance and costs. You can get started right away and don't need to manyally configure and maintain your Kubernetes cluster. Workloads aren’t dependent on your internet connection and machine/lab setup if you need more power its easy to add with DOKS
+I have been wanting to play with Kubeflow out of curiosity and for fun more than anything. Installing it locally sounds like it could torture my machine. Even if it ended up working doing any kind of machine learning could take up a lot out of my processors. Instead, taking advantage of DigitalOcean Kubernetes is a good choice when you can pay $10/month to get started with real Kubernetes. 
+
+Since it's Kubernetes, once you pick a cluster it's easy to add or remove nodes pools to manage performance and costs. You can get started right away and don't need to manyally configure and maintain your Kubernetes cluster. Workloads aren’t dependent on your internet connection and machine/lab setup if you need more power its easy to add with DOKS
 
 Why install Kubeflow?
 
@@ -33,5 +35,5 @@ For my purposes I installed all the tools because I wanted to see what a full in
 * kustomize (version 3.2.0) (download link)
     * https://stackoverflow.com/questions/66836979/how-to-install-a-specific-kustomize-version3.2.3
     * ⚠️ Kubeflow 1.4.0 is not compatible with the latest versions of of kustomize 4.x. This is due to changes in the order resources are sorted and printed. Please see kubernetes-sigs/kustomize#3794 and kubeflow/manifests#1797.
-* [kubectl])(https://kubectl.docs.kubernetes.io/installation/kubectl/)
+* [kubectl]s(https://kubectl.docs.kubernetes.io/installation/kubectl/)
 
