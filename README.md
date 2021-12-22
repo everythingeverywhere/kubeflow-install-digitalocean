@@ -32,8 +32,10 @@ For my purposes I installed all the tools because I wanted to see what a full in
 * Kubernetes (tested with version 1.19) with a default StorageClass
     * DigitalOcean version recommended: 1.19.15-do.0
     * Most likely your strage class has been set up with DigitalOcean you can check with `kubectl get pv` if not you can apply a simiple manifest [Setting up a Storage Class with DigitalOcean](https://docs.digitalocean.com/products/kubernetes/how-to/add-volumes/)
-* kustomize (version 3.2.0) (download link)
+* [kustomize](https://github.com/kubernetes-sigs/kustomize/releases/tag/v3.2.0)(version 3.2.0)
     * https://stackoverflow.com/questions/66836979/how-to-install-a-specific-kustomize-version3.2.3
+    * Scroll to the bottom of the page and select the correct version for your machine
+    ![](assets/kustomize3.2.png)
     * ⚠️ Kubeflow 1.4.0 is not compatible with the latest versions of of kustomize 4.x. This is due to changes in the order resources are sorted and printed. Please see kubernetes-sigs/kustomize#3794 and kubeflow/manifests#1797.
 * [kubectl](https://kubectl.docs.kubernetes.io/installation/kubectl/)
 
