@@ -5,7 +5,7 @@
 ---
 > This repo is part of the [DigitalOcean Kubernetes Challenge](https://www.digitalocean.com/community/pages/kubernetes-challenge#anchor--success-criteria)
 
-I have been wanting to play with Kubeflow out of curiosity and for fun more than anything. Installing it locally sounds like it could torture my machine. Even if it ended up working doing any kind of machine learning could take up a lot out of my processors. Instead, taking advantage of DigitalOcean Kubernetes is a good choice when you can pay $10/month to get started with real Kubernetes. 
+I have been wanting to play with Kubeflow out of curiosity and for fun more than anything. Installing it locally sounds like it could torture my machine. Even if it ended up working doing any kind of machine learning could fkood my processors. Instead, taking advantage of DigitalOcean Kubernetes is a good choice when you can pay $10/month to get started with real Kubernetes. 
 
 Since it's Kubernetes, once you pick a cluster it's easy to add or remove nodes pools to manage performance and costs. You can get started right away and don't need to manyally configure and maintain your Kubernetes cluster. Workloads aren’t dependent on your internet connection and machine/lab setup if you need more power its easy to add with DOKS
 
@@ -33,9 +33,8 @@ For my purposes I installed all the tools because I wanted to see what a full in
     * DigitalOcean version recommended: 1.19.15-do.0
     * Most likely your strage class has been set up with DigitalOcean you can check with `kubectl get pv` if not you can apply a simiple manifest [Setting up a Storage Class with DigitalOcean](https://docs.digitalocean.com/products/kubernetes/how-to/add-volumes/)
 * [kustomize](https://github.com/kubernetes-sigs/kustomize/releases/tag/v3.2.0)(version 3.2.0)
-    * https://stackoverflow.com/questions/66836979/how-to-install-a-specific-kustomize-version3.2.3
-    * Scroll to the bottom of the page and select the correct version for your machine
-    ![](assets/kustomize3.2.png)
+    * Click the link above to download binary, make it executible with chmod +x and add it to your path
+    * Scroll to the bottom of the page and select the correct version for your machine like the following image ![](assets/kustomize3.2.png)
     * ⚠️ Kubeflow 1.4.0 is not compatible with the latest versions of of kustomize 4.x. This is due to changes in the order resources are sorted and printed. Please see kubernetes-sigs/kustomize#3794 and kubeflow/manifests#1797.
 * [kubectl](https://kubectl.docs.kubernetes.io/installation/kubectl/)
 
