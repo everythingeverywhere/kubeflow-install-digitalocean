@@ -7,13 +7,13 @@
 
 I have been wanting to play with Kubeflow out of curiosity and for fun more than anything. Installing it locally sounds like it could torture my machine. Even if it ended up working doing any kind of machine learning could fkood my processors. Instead, taking advantage of DigitalOcean Kubernetes is a good choice when you can pay $10/month to get started with real Kubernetes. 
 
-Since it's Kubernetes, once you pick a cluster it's easy to add or remove nodes pools to manage performance and costs. You can get started right away and don't need to manyally configure and maintain your Kubernetes cluster. Workloads aren’t dependent on your internet connection and machine/lab setup if you need more power its easy to add with DOKS
+Since it's Kubernetes, once you pick a cluster it's easy to add or remove nodes to manage performance and costs. You can get started right away and don't need to manyally configure and maintain your Kubernetes cluster. Workloads aren’t dependent on your internet connection and machine/lab setup if you need more power its easy to add with DOKS
 
 Why install Kubeflow?
 
-Kubeflow is a very fascinating project that originally started as a simple way to run Tensorflow on Kubernetes, but has since expanded. Now, Kubeflow has many common tools and frameworks used for Machine Learning to make it possible to run end-to-end ML workflows on Kubernetes. The Kubeflow project has a lot of the major machine learning and data science tools out there. Using it is also fun because it's so customizable and easy to get Jupyter notebook or terminal running.
+Kubeflow is a very fascinating project that originally started as a simple way to run Tensorflow on Kubernetes, but has since expanded. Now, Kubeflow has many common tools and frameworks used for Machine Learning to make it possible to run end-to-end ML workflows on Kubernetes. The Kubeflow project has a lot of the major machine learning and data science tools out there like Jupyter notebook, PyTorch, TensorFlow,. Using it is also fun because it's so customizable and easy to get Jupyter notebook or terminal running.
 
-[For more information about Kubeflow](https://www.kubeflow.org/docs/started/architecture/) 
+* [For more information about Kubeflow](https://www.kubeflow.org/docs/started/architecture/) 
 
 ### Upside to installing Kubeflow manually
 
@@ -25,6 +25,8 @@ Ultimately, the manual and packaged Kubeflow installations will deliver the same
 
 
 For my purposes I installed all the tools because I wanted to see what a full installation looks like.
+
+
 ---
 
 ### Prerequisites
