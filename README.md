@@ -13,7 +13,7 @@ Why install Kubeflow?
 
 Kubeflow is a very fascinating project that originally started as a simple way to run Tensorflow on Kubernetes, but has since expanded. Now, Kubeflow has many common tools and frameworks used for Machine Learning to make it possible to run end-to-end ML workflows on Kubernetes. The Kubeflow project has a lot of the major machine learning and data science tools out there. Using it is also fun because it's so customizable and easy to get Jupyter notebook or terminal running.
 
-* [For more information about Kubeflow](https://www.kubeflow.org/docs/started/architecture/) 
+[For more information about Kubeflow](https://www.kubeflow.org/docs/started/architecture/) 
 
 ### Upside to installing Kubeflow manually
 
