@@ -1,56 +1,6 @@
-# Manual Install Kubeflow on DigitalOcean Kubernetes 
 
 
-## Overview
----
-> This repo is part of the [DigitalOcean Kubernetes Challenge](https://www.digitalocean.com/community/pages/kubernetes-challenge#anchor--success-criteria)
 
-I have been wanting to play with Kubeflow for a while out of curiosity and for fun more than anything. A long time ago I tried it on Microk8s locally on a laptop and on a raspberrypi cluster and I couldn't make it function. If it worked locally it would also keep my available processors running increasing energy costs and taking up storage.  
-
-Instead, I took advantage of DigitalOcean Kubernetes as is it's set up, cheaper than raspberrypi's, and  can be instantiated and used now. 
-
-Like with any Kubernetes, once you pick a cluster it's easy to add or remove nodes to manage performance and costs. You can get started right away and don't need to manually configure and maintain your Kubernetes cluster. Workloads aren’t dependent on your internet connection and machine/lab setup if you need more power its easy to add with DigitalOcean Kubernetes
-
-### Advantages to a manual Kubeflow installation
-
-Kubeflow is a very fascinating project that originally started as a simple way to run Tensorflow on Kubernetes, but has since expanded. Now, Kubeflow has many common tools and frameworks used for Machine Learning to make it possible to run end-to-end ML workflows on Kubernetes. The Kubeflow project has a lot of the major machine learning and data science tools out there like Jupyter notebook, PyTorch, TensorFlow,. Using it is also fun because it's so customizable and easy to get a Jupyter notebook or terminal running.
-
-* [Kubeflow's Architecture](https://www.kubeflow.org/docs/started/architecture/) 
-
-Ultimately, the manual and packaged Kubeflow installations will deliver the same results, but there are some upsides to installing manually.
-
-**Customizability:** Choose the Kubeflow components to include, maybe you want to just install KubeFlow Pipelines. Give your developers access only to what they need. Or install everything if you want to have it available. You can also customize your Kubeflow deployment alongside your Kubernetes cluster to have the exact amount of performance you need. Manual installations can potentially live anywhere with Kubernetes.
-
-**Control:** A manual Kubeflow installation can be more robust than the "official" cloud versions in some ways. The UI can be different than cloud installations and you might prefer one over ther other. You can control the underlying Kubernetes and have it live in the same cluster alongside otherworkloads like running like a CI/CD tool to kick off workflows.
-
-
-For my purposes I installed all the tools because I wanted to see what a full installation looked like. So I executed most of the install commands.
-
----
-
-### Requirements
-
-There is very little information on installing Kubeflow manually so I don't have info on cluster requirements. I would generally recommend at least 3 nodes with 4 GB RAM  and 2 vCPUs
-
-* Kubernetes (recommend version 1.19) with a default StorageClass
-    * Go to [DigitalOcean Kubernetes](https://cloud.digitalocean.com/kubernetes/clusters) in top right select `Create Cluster` to create a new cluster ![Create Cluster](assets/create-cluster.png)
-    * version recommended: `1.19.15-do.0`
-    * Click create cluster and you will be taken to a **Getting Started** page, follow those instructions to set up your CLI etc while your cluster is created (takes 4 mins)
-    * Since you are using DigitalOcean Kubernetes it will create a volume for you when needed so you don't have to worry about StorageClass
-* [kustomize](https://github.com/kubernetes-sigs/kustomize/releases/tag/v3.2.0)(version 3.2.0)
-    * Click the [link](https://github.com/kubernetes-sigs/kustomize/releases/tag/v3.2.0)(version 3.2.0) above to download the correct binary for your machine
-    * Scroll to the bottom of the page and select the correct version for your machine like the following image ![](assets/kustomize3.2.png)
-        * Make the file executible with chmod +x and add it to your path
-    * ⚠️ Kubeflow 1.4.0 is not compatible with the latest versions of of kustomize 4.x. The KubeFlow team is working on this with Kustomize.
-* [kubectl](https://kubectl.docs.kubernetes.io/installation/kubectl/)
-
-## Installation
-
-> **Before installing:** Make sure to execute the install commands twice and verify everything was installed before proceeding to the next command. Some components have dependencies on others and might not install the first time you execute a command. This is normal for Kubernetes, especially when using Custom Resources (CRD's and CR's).
-
-> [Kubeflow manifests](https://github.com/kubeflow/manifests#installation)
-
-I attempted to put as much of the output as possible so that readers have more context. Don't forget to execute the commands a few times to make sure everything installs.
 
 # Clone manifests repo
 
@@ -60,7 +10,7 @@ git clone https://github.com/kubeflow/manifests.git
 cd manifests 
 
 #install cert manager
-The Kubeflow cert-manager is used by many components to provide certificates for webhooks.
+cert-manager is used by many Kubeflow components to provide certificates for admission webhooks.
 
 ```bash
 kustomize build common/cert-manager/cert-manager/base | kubectl apply -f -
@@ -668,7 +618,7 @@ configmap/default-install-config-5cbhhbttg4 created
 profile.kubeflow.org/kubeflow-user-example-com created
 ```
 
-## Connect to Kubeflow 
+## Connect to your Kubeflow Cluster
 After installation, it will take some time for all the pods to be READY. otherwise you might get unexpected errors. 
 
 To verify the pods are ready, use the following :
