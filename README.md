@@ -669,7 +669,7 @@ profile.kubeflow.org/kubeflow-user-example-com created
 ```
 
 ## Connect to Kubeflow 
-After installation, it will take some time for all the pods to be READY. otherwise you might get unexpected errors. 
+After installing wait some time for all the pods to be READY. Otherwise you might get unexpected errors. 
 
 To verify the pods are ready, use the following :
 ```
@@ -681,3 +681,23 @@ kubectl get pods -n knative-serving
 kubectl get pods -n kubeflow
 kubectl get pods -n kubeflow-user-example-com
 ```
+
+### Port forward
+Run the following to port-forward Istio's Ingress-Gateway to local port 8080:
+```
+kubectl port-forward svc/istio-ingressgateway -n istio-system 8080:80
+```
+
+
+Login with the default user: 
+```
+user@example.com 
+```
+
+The default password is 
+```
+12341234
+```
+
+* [For info on setting up NodePort / LoadBalancer / Ingress](https://github.com/kubeflow/manifests#nodeport--loadbalancer--ingress)
+* [To Change the default password](https://github.com/kubeflow/manifests#change-default-user-password)
