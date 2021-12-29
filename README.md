@@ -1,6 +1,10 @@
 # Manual Install Kubeflow on DigitalOcean Kubernetes 
 
 
+
+https://user-images.githubusercontent.com/7246632/147616426-6e897866-cca4-4ad5-90b8-c16700b6c8a2.mp4
+
+
 ## Overview
 ---
 > This repo is part of the [DigitalOcean Kubernetes Challenge](https://www.digitalocean.com/community/pages/kubernetes-challenge#anchor--success-criteria)
